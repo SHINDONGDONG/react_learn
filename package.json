@@ -5,5 +5,8 @@
     "react-scripts": "^5.0.1",
     "sass": "^1.83.0",
     "scrollreveal": "^4.0.9"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
