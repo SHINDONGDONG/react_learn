@@ -9,10 +9,11 @@ import { SuperRare } from './components/SuperRare';
 import { Release } from './components/Release';
 import { Signup } from './components/Signup';
 import { Footer } from './components/Footer';
+import "./scss/index.scss"
 
  const App = () => {
   return <div className='app-container'> 
-    <ScrollToTop />
+    {/* <ScrollToTop /> */}
     <Navbar />
     <Home />
     <Free />
