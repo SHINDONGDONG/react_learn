@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import logo from "../assets/logo/logo.png";
-import { BsFillMoonFill, BsSun } from "react-icons/bs";
+import {
+  BsDoorClosed,
+  BsFillMoonFill,
+  BsMenuButton,
+  BsSun,
+} from "react-icons/bs";
 export const Navbar = ({ changeTheme, currentTheme }) => {
   const [navState, setNavState] = useState(false);
   return (
@@ -10,7 +15,13 @@ export const Navbar = ({ changeTheme, currentTheme }) => {
           <img src={logo} alt="logo" />
         </div>
         <div className="toggle-container">
-          <div className="toggle"></div>
+          <div className="toggle">
+            {navState ? (
+              <BsDoorClosed onClick={() => setNavState(false)} />
+            ) : (
+              <BsMenuButton onClick={() => setNavState(true)} />
+            )}
+          </div>
           <div className="mode">
             {currentTheme === "dark" ? (
               <BsSun className="light" />
@@ -20,7 +31,7 @@ export const Navbar = ({ changeTheme, currentTheme }) => {
           </div>
         </div>
       </div>
-      <div className="links-container">
+      <div className={`links-container ${navState ? "nav-visible" : ""}`}>
         <ul className="links">
           <li>
             <a href="#Features">Features</a>
